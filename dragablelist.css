@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #595DB8;
+}
+
+.sortable-list{
+    width: 445px;
+    background: whitesmoke;
+    list-style: none;
+    border-radius: 6px;
+    padding: 30px 25px 20px;
+}
+
+.sortable-list .item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 11px;
+    padding: 10px 13px;
+    cursor: move;
+}
+
+.sortable-list .item .details{
+    display: flex;
+    align-items: center;
+
+}
+
+.sortable-list .item .details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.item .details span{
+    font-size: 1.13rem;
+}
+.item i{
+    font-size: 1.13rem;
+    color: #474747;
+}
+
+.item.dragging :where(.details,i){
+    opacity: 0;
+}
+/* This is a complex selector using the :where() pseudo-class. It selects elements that match any of the selectors inside the parentheses. In this case, it's looking for elements with either the class "details" or the "i" tag (which typically represents an italicized text) that are descendants of the element with the "item" and "dragging" classes. */
+/* This is a CSS property that sets the opacity of the selected elements to 0, making them completely transparent. So, any child element with the class "details" or the "i" tag within the element with both "item" and "dragging" classes will become invisible when an item is being dragged. */

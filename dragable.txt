@@ -1,0 +1,11 @@
+.find() method: This method is used to find the first element in the array that satisfies the provided testing function. In this case, the testing function is the arrow function inside find().
+
+sibling => { return e.clientY <= sibling.offsetTop + sibling.offsetHeight / 2; }: This arrow function is the testing function passed to find(). It checks each sibling element to see if the vertical position of the mouse cursor (e.clientY) is less than or equal to the midpoint of the sibling's height. This condition is used to determine whether the mouse cursor is positioned in the upper half or lower half of the sibling element.
+
+sibling.offsetTop: Gets the offset from the top of the closest positioned ancestor.
+sibling.offsetHeight: Gets the height of the sibling element.
+The condition e.clientY <= sibling.offsetTop + sibling.offsetHeight / 2 essentially checks if the mouse cursor is in the upper half of the sibling element.
+
+console.log(nextSibling): Finally, the found next sibling element is logged to the console. This could be null if there is no next sibling that satisfies the condition.
+
+In summary, this code is attempting to find the next sibling element based on the position of the mouse cursor during a drag operation. It checks whether the cursor is in the upper or lower half of each sibling element and selects the first one where the condition is true.
